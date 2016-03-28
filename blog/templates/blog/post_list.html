@@ -7,13 +7,23 @@
 			<h1><a href="">Sabine's Blog</a></h1>
 		</div>
 		<div>
-			<h2><a href="">First post</a></h1>
+			<h2><strong>First post</strong></h1>
 			<p>Hi there!</p>
 			<p>Welcome to my blog!</p>
+			<br />
 		</div>
 		<div>
-			<h2><a href="">Second post</a></h1>
+			<h2><strong>Second post</strong></h1>
 			<p><em>Back</em> to working on the <a href="http://tutorial.djangogirls.org/en/">tutorial</a>!</p>
+			<br />
 		</div>
+		{% for post in posts %}
+			<div>
+				<h2><strong>{{post.title}}</strong></h1>
+				<p>{{post.text|linebreaks}}</p>
+				<p>published: {{post.published_date}}</p>
+				<br />
+			</div>
+		{% endfor %}
 	</body>
 </html>
